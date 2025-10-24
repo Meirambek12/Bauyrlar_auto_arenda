@@ -7,154 +7,228 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top left, #0a0a0a 0%, #1b1b1b 50%, #000000 100%);
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
       color: #f5f5f5;
     }
+
     header {
-      background: #111;
-      padding: 25px 0;
+      background: linear-gradient(90deg, #000, #b8860b);
+      padding: 20px 0;
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
-      color: #d4af37;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+      color: #ffd700;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #1a1a1a;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(212,175,55,0.3);
-    }
-    nav a {
-      color: #f0f0f0;
-      margin: 0 18px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #d4af37;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 40px auto;
-    }
-    h2 {
+
+    .filter-buttons {
       text-align: center;
-      color: #d4af37;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      margin: 30px 0;
     }
-    .car-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+
+    .filter-buttons button {
+      background: #111;
+      border: 1px solid #b8860b;
+      color: #ffd700;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
     }
+
+    .filter-buttons button:hover, .filter-buttons button.active {
+      background: #b8860b;
+      color: #000;
+      font-weight: 600;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
     .car {
       background: #111;
-      border: 1px solid rgba(212,175,55,0.15);
-      border-radius: 14px;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+      width: 340px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .car:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(255,215,0,0.2);
     }
+
     .car img {
       width: 100%;
-      height: 190px;
+      height: 240px;
       object-fit: cover;
     }
+
     .car-info {
-      padding: 18px;
+      padding: 15px;
       text-align: center;
     }
+
     .car-info h3 {
-      margin: 8px 0;
-      color: #fff;
-      font-size: 1.1rem;
+      margin: 10px 0 5px;
+      font-size: 1.4rem;
+      color: #ffd700;
     }
+
     .car-info p {
-      color: #d4af37;
+      margin: 0;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #000;
+      color: #f5f5f5;
+      border-top: 1px solid #333;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
       font-weight: 500;
     }
-    .highlight {
-      background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-      color: #fff;
-      padding: 50px 25px;
-      text-align: center;
-      border-radius: 16px;
-      margin: 50px 0;
-      border: 1px solid rgba(212,175,55,0.3);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-    }
-    footer {
-      background: #0e0e0e;
-      text-align: center;
-      padding: 20px;
-      color: #aaa;
-      font-size: 0.95rem;
-      border-top: 1px solid rgba(212,175,55,0.2);
-    }
-    a.contact {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    a.contact:hover {
+
+    footer a:hover {
       text-decoration: underline;
+    }
+
+    .special-offer {
+      background: linear-gradient(90deg, #b8860b, #ffd700);
+      color: #000;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      margin: 30px auto;
+      width: 80%;
+      max-width: 800px;
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(255,215,0,0.3);
+    }
+
+    .special-offer h2 {
+      margin-top: 0;
+    }
+
+    @media(max-width: 768px) {
+      .car { width: 90%; }
     }
   </style>
 </head>
 <body>
+
   <header>Bauyrlar_arenda_auto</header>
 
-  <nav>
-    <a href="#vned">Внедорожник</a>
-    <a href="#cross">Кроссовер</a>
-    <a href="#sedan">Седан</a>
-    <a href="#truck">Жүк көлігі</a>
-    <a href="#contact">Байланыс</a>
-  </nav>
+  <section class="special-offer">
+    <h2>Көліктердің үздігі — Toyota Prado 150</h2>
+    <p>Сенімділік пен жайлылықтың мінсіз үйлесімі. Жолда абыройыңды арттырып, саяхатыңды ерекше етеді.</p>
+  </section>
 
-  <div class="container">
-    <div class="highlight">
-      <h2>Prado 150 – көліктердің ең үздігі!</h2>
-      <p>Күш пен стильдің мінсіз үйлесімі. Әр сапарыңыз ерекше әсер қалдырады.</p>
-    </div>
-
-    <h2 id="vned">Внедорожник</h2>
-    <div class="car-grid">
-      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\48a779d6-93b3-44b6-8fc2-0fbb944442bd.jpg"><div class="car-info"><h3>Toyota Prado 150</h3><p>Күніне 30 000₸</p></div></div>
-      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\32a0ea89-5bed-4398-a4f2-75de16607e48.jpg"><div class="car-info"><h3>Lexus LX 570</h3><p>Күніне 55 000₸</p></div></div>
-      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\a561afff-00e0-4099-949a-50a9c69556b9.jpg"><div class="car-info"><h3>Toyota Fortuner</h3><p>Күніне 28 000₸</p></div></div>
-    </div>
-
-    <h2 id="cross">Кроссовер</h2>
-    <div class="car-grid">
-      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\81540523-f309-42bc-863e-77a80ecbd4d5.jpg"><div class="car-info"><h3>Acura MDX</h3><p>Күніне 20 000₸</p></div></div>
-    </div>
-
-    <h2 id="sedan">Седан</h2>
-    <div class="car-grid">
-      <div class="car"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=60"><div class="car-info"><h3>Toyota Camry 50</h3><p>Күніне 20 000₸</p></div></div>
-      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\5b77859b-256b-4405-a0d2-ed76025e8252.jpg"><div class="car-info"><h3>Toyota Camry 45</h3><p>Күніне 500₸</p></div></div>
-    </div>
-
-    <h2 id="truck">Жүк көлігі</h2>
-    <div class="car-grid">
-      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\13fb931c-3aa7-45d7-83e3-d9a7bdaf2a7e.jpg"><h3>Ford Transit</h3><p>Күніне 25 000₸</p></div></div>
-    </div>
+  <div class="filter-buttons">
+    <button class="active" onclick="filterCars('all')">Барлығы</button>
+    <button onclick="filterCars('suv')">Внедорожник</button>
+    <button onclick="filterCars('crossover')">Кроссовер</button>
+    <button onclick="filterCars('sedan')">Седан</button>
+    <button onclick="filterCars('truck')">Жүк көлігі</button>
   </div>
 
-  <footer id="contact">
-    <p>Байланыс: <a class="contact" href="https://wa.me/77765203133" target="_blank">87765203133 (WhatsApp)</a> | <a class="contact" href="https://instagram.com/naur1z_mm" target="_blank">@naur1z_mm</a></p>
+  <main id="car-list">
+    <div class="car" data-type="suv">
+      <img src="file:///C:/Users/%D0%9C%D0%B5%D0%B9%D1%80%D0%B0%D0%BC%D0%B1%D0%B5%D0%BA/Desktop/48a779d6-93b3-44b6-8fc2-0fbb944442bd.jpg" alt="Prado 150">
+      <div class="car-info">
+        <h3>Toyota Prado 150</h3>
+        <p>Күніне 25 000₸</p>
+      </div>
+    </div>
+
+    <div class="car" data-type="suv">
+      <img src="https://images.unsplash.com/photo-1549921296-3a9ed54e02d0?auto=format&fit=crop&w=1200&q=60" alt="Lexus LX 570">
+      <div class="car-info">
+        <h3>Lexus LX 570</h3>
+        <p>Күніне 45 000₸</p>
+      </div>
+    </div>
+
+    <div class="car" data-type="suv">
+      <img src="https://images.unsplash.com/photo-1603052875511-6a3a6d3b7fd4?auto=format&fit=crop&w=1200&q=60" alt="Fortuner">
+      <div class="car-info">
+        <h3>Toyota Fortuner</h3>
+        <p>Күніне 22 000₸</p>
+      </div>
+    </div>
+
+    <div class="car" data-type="crossover">
+      <img src="file:///C:/Users/%D0%9C%D0%B5%D0%B9%D1%80%D0%B0%D0%BC%D0%B1%D0%B5%D0%BA/Desktop/81540523-f309-42bc-863e-77a80ecbd4d5.jpg" alt="Acura MDX">
+      <div class="car-info">
+        <h3>Acura MDX</h3>
+        <p>Күніне 20 000₸</p>
+      </div>
+    </div>
+
+    <div class="car" data-type="sedan">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=60" alt="Camry 50">
+      <div class="car-info">
+        <h3>Toyota Camry 50</h3>
+        <p>Күніне 12 000₸</p>
+      </div>
+    </div>
+
+    <div class="car" data-type="sedan">
+      <img src="https://images.unsplash.com/photo-1583267746892-b94ef6f8e9b5?auto=format&fit=crop&w=1200&q=60" alt="Camry 45">
+      <div class="car-info">
+        <h3>Toyota Camry 45</h3>
+        <p>Күніне 10 000₸</p>
+      </div>
+    </div>
+
+    <div class="car" data-type="truck">
+      <img src="https://images.unsplash.com/photo-1618675522340-247097a3e24a?auto=format&fit=crop&w=1200&q=60" alt="Ford Transit">
+      <div class="car-info">
+        <h3>Ford Transit</h3>
+        <p>Күніне 22 000₸</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://wa.me/77765203133" target="_blank">📞 WhatsApp: 87765203133</a> |
+      <a href="https://instagram.com/naur1z_mm" target="_blank">📸 Instagram: @naur1z_mm</a>
+    </p>
+    <p>© 2025 Bauyrlar_arenda_auto. Барлық құқықтар қорғалған.</p>
   </footer>
+
+  <script>
+    function filterCars(type) {
+      const cars = document.querySelectorAll('.car');
+      const buttons = document.querySelectorAll('.filter-buttons button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      cars.forEach(car => {
+        if (type === 'all' || car.dataset.type === type) {
+          car.style.display = 'block';
+        } else {
+          car.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
+
