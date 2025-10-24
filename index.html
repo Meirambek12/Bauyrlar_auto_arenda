@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bauyrlar_arenda_auto</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top left, #0a0a0a 0%, #1b1b1b 50%, #000000 100%);
+      color: #f5f5f5;
+    }
+    header {
+      background: #111;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #d4af37;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #1a1a1a;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(212,175,55,0.3);
+    }
+    nav a {
+      color: #f0f0f0;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #d4af37;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+    h2 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .car {
+      background: #111;
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .car:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+    }
+    .car img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+    .car-info {
+      padding: 18px;
+      text-align: center;
+    }
+    .car-info h3 {
+      margin: 8px 0;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    .car-info p {
+      color: #d4af37;
+      font-weight: 500;
+    }
+    .highlight {
+      background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+      color: #fff;
+      padding: 50px 25px;
+      text-align: center;
+      border-radius: 16px;
+      margin: 50px 0;
+      border: 1px solid rgba(212,175,55,0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+    footer {
+      background: #0e0e0e;
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+    }
+    a.contact {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    a.contact:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>Bauyrlar_arenda_auto</header>
+
+  <nav>
+    <a href="#vned">Внедорожник</a>
+    <a href="#cross">Кроссовер</a>
+    <a href="#sedan">Седан</a>
+    <a href="#truck">Жүк көлігі</a>
+    <a href="#contact">Байланыс</a>
+  </nav>
+
+  <div class="container">
+    <div class="highlight">
+      <h2>Prado 150 – көліктердің ең үздігі!</h2>
+      <p>Күш пен стильдің мінсіз үйлесімі. Әр сапарыңыз ерекше әсер қалдырады.</p>
+    </div>
+
+    <h2 id="vned">Внедорожник</h2>
+    <div class="car-grid">
+      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\48a779d6-93b3-44b6-8fc2-0fbb944442bd.jpg"><div class="car-info"><h3>Toyota Prado 150</h3><p>Күніне 30 000₸</p></div></div>
+      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\32a0ea89-5bed-4398-a4f2-75de16607e48.jpg"><div class="car-info"><h3>Lexus LX 570</h3><p>Күніне 55 000₸</p></div></div>
+      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\a561afff-00e0-4099-949a-50a9c69556b9.jpg"><div class="car-info"><h3>Toyota Fortuner</h3><p>Күніне 28 000₸</p></div></div>
+    </div>
+
+    <h2 id="cross">Кроссовер</h2>
+    <div class="car-grid">
+      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\81540523-f309-42bc-863e-77a80ecbd4d5.jpg"><div class="car-info"><h3>Acura MDX</h3><p>Күніне 20 000₸</p></div></div>
+    </div>
+
+    <h2 id="sedan">Седан</h2>
+    <div class="car-grid">
+      <div class="car"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=60"><div class="car-info"><h3>Toyota Camry 50</h3><p>Күніне 20 000₸</p></div></div>
+      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\5b77859b-256b-4405-a0d2-ed76025e8252.jpg"><div class="car-info"><h3>Toyota Camry 45</h3><p>Күніне 500₸</p></div></div>
+    </div>
+
+    <h2 id="truck">Жүк көлігі</h2>
+    <div class="car-grid">
+      <div class="car"><img src="C:\Users\Мейрамбек\Desktop\13fb931c-3aa7-45d7-83e3-d9a7bdaf2a7e.jpg"><h3>Ford Transit</h3><p>Күніне 25 000₸</p></div></div>
+    </div>
+  </div>
+
+  <footer id="contact">
+    <p>Байланыс: <a class="contact" href="https://wa.me/77765203133" target="_blank">87765203133 (WhatsApp)</a> | <a class="contact" href="https://instagram.com/naur1z_mm" target="_blank">@naur1z_mm</a></p>
+  </footer>
+</body>
+</html>
